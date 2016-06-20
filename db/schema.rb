@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20151212021023) do
   add_index "arguments", ["statement"], name: "index_arguments_on_statement", unique: true
 
   create_table "bitcoin_addresses", force: :cascade do |t|
-    t.string   "bitcoin_address", limit: 255
-    t.integer  "balance",         limit: 8,   default: 0
+    t.string   "bitcoin_address"
+    t.integer  "balance",         limit: 8, default: 0
     t.datetime "updated_at"
   end
 
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151212021023) do
 
   create_table "signatures", id: false, force: :cascade do |t|
     t.integer "argument_id"
-    t.boolean "negation",                       default: false
-    t.string  "signature",          limit: 255,                 null: false
+    t.boolean "negation",           default: false
+    t.string  "signature",                          null: false
     t.integer "bitcoin_address_id"
   end
 
