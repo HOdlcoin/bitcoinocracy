@@ -10,9 +10,8 @@ class BitcoinAddress < ActiveRecord::Base
   end
 
   def update_balance
-    res = request_balance("https://blockchain.info/q/addressbalance/#{self.bitcoin_address}") ||
-          request_balance("https://blockexplorer.com/api/addr/#{self.bitcoin_address}/balance")
-
+    res = request_balance("http://www.fuzzbawls.pw/explore/HOdlcoin/api_fetch.php?method=address_immature_balance&address=#{self.bitcoin_address}")
+  
     if res!=false
       if ( (new_balance=res.to_i) >= 0) and (new_balance != self.balance)
         update_attribute :balance, new_balance
