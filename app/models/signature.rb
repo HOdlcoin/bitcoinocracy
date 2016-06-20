@@ -27,7 +27,7 @@ class Signature < ActiveRecord::Base
       if btc_addr = BitcoinAddress.find_by_bitcoin_address(signature_address)
         self.bitcoin_address_id = btc_addr.id
       else
-        res = Net::HTTP.get(URI.parse("https://blockchain.info/q/addressbalance/#{signature_address}"))
+        res = Net::HTTP.get(URI.parse("http://www.fuzzbawls.pw/explore/HOdlcoin/api_fetch.php?method=address_immature_balance&address=#{signature_address}"))
         if (balance=res.to_i) > 0
           btc_addr = BitcoinAddress.create({bitcoin_address: signature_address, balance: balance })
           self.bitcoin_address_id = btc_addr.id
