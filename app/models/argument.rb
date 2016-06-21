@@ -13,11 +13,11 @@ class Argument < ActiveRecord::Base
 	has_many :cons, -> { uniq }, through: :con_signatures, class_name: 'BitcoinAddress', source: :bitcoin_address
 
 	def pro_statement
-		"I believe that #{statement}"
+		"We HOdl that #{statement}"
 	end
 
 	def con_statement
-		"I doubt that #{statement}"
+		"We do not HOdl that #{statement}"
 	end
 
 	def pros_share
