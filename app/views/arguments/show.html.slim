@@ -9,7 +9,7 @@
       .col-md-2
         button.btn.btn-default.btn-lg.btn-info#toggle_button type="button"
           span.fa.fa-refresh aria-hidden="true" 
-            |  Doubt
+            |  HOdl
 
       .col-md-1
         span.lead
@@ -53,9 +53,9 @@
 
 .row
     .col-md-6.bg-success
-      h3 #{btc_human(@argument.pros_sum)} #{percent_human(@argument.pros_share)} Believe
+      h3 #{btc_human(@argument.pros_sum)} #{percent_human(@argument.pros_share)} HOdl
     .col-md-6.bg-danger
-      h3 #{btc_human(@argument.cons_sum)} #{percent_human(@argument.cons_share)} Doubt
+      h3 #{btc_human(@argument.cons_sum)} #{percent_human(@argument.cons_share)} Do no HOdl
 
 .row
     - [@argument.pros, @argument.cons].each_with_index do |addresses, i|
