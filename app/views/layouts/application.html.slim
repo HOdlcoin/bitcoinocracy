@@ -1,13 +1,13 @@
 doctype html
 html
   head
-    / title Bitcoinocracy
-    = display_meta_tags site: 'Bitcoinocracy', separator: "&mdash;".html_safe
+    / title Nutocracy
+    = display_meta_tags site: 'Nutocracy', separator: "&mdash;".html_safe
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = nav_bar static: :top, brand: "Bitcoinocracy", responsive: true
+    = nav_bar static: :top, brand: "Nutocracy", responsive: true
       = menu_group
         = menu_item "Home", root_path
         = menu_item t("arguments.index.new"), new_argument_path
@@ -24,11 +24,11 @@ html
       = yield
       .footer
         hr
-        a.pull-right href="https://github.com/arsenische/bitcoinocracy/issues/new" target="_blank" Report a bug
+        a.pull-right href="https://github.com/HOdlcoin/nutocracy/issues/new" target="_blank" Report a bug
         p 
-          a href="http://bitcoinocracy.com" Bitcoinocracy.com
+          a href="http://Nutocracy.HOdlcoin.com" Nutocracy.HOdlcoin.com
           |. Source code is available at 
-          a href="https://github.com/arsenische/bitcoinocracy/" target="_blank" GitHub
+          a href="https://github.com/HOdlcoin/nutocracy/" target="_blank" GitHub
           |  and you can also 
           a href="https://tip4commit.com/github/arsenische/bitcoinocracy" target="_blank" support
           |  its development.
