@@ -1,5 +1,6 @@
 GIT
   remote: git://github.com/HOdlcoin/bitcoin-cigs.git
+  revision: 0bdf2c57c9d5ffc30c032abe315cf7b9f1dbe270
   specs:
     bitcoin-cigs (0.0.7)
 
