@@ -23,7 +23,7 @@ en:
   hello: "Hello world"
   arguments:
     index:
-      new: "Submit your Argument"
-      title: "Bitcoinocracy - vote with your Bitcoin signature"
+      new: "Submit your Motion"
+      title: "Nutocracy - cast your nuts with your HOdlcoin signature"
   addresses:
-    index: 'Bitcoin Addresses'
+    index: 'HOdlcoin Addresses'
