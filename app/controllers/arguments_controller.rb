@@ -9,7 +9,7 @@ class ArgumentsController < ApplicationController
 
 
   def decided
-    @arguments = Argument.where("pros_sum > ?",5000000).page params[:page]
+    @arguments = Argument.where("pros_sum > ?",500000000000000).page params[:page]
     render :index
   end
 
