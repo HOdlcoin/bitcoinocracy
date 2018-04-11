@@ -11,7 +11,7 @@ class BitcoinAddress < ActiveRecord::Base
 
   def update_balance
     res = request_balance("http://hodl.amit.systems:1781/ext/getbalance/#{self.bitcoin_address}")
-  
+    logger.info("request_balance: #{res}")
     if res!=false
       if ( (new_balance=res.to_i) >= 0) and (new_balance != self.balance)
         update_attribute :balance, new_balance
@@ -20,7 +20,7 @@ class BitcoinAddress < ActiveRecord::Base
         touch :updated_at # push it to the end of the queue
       end
     else
-      log.warn "failed to retrieve balance for bitcoin address #{self.bitcoin_address}"
+      logger.info("failed to retrieve balance for bitcoin address #{self.bitcoin_address}")
     end
   end
 
