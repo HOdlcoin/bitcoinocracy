@@ -20,7 +20,7 @@ class BitcoinAddress < ActiveRecord::Base
         touch :updated_at # push it to the end of the queue
       end
     else
-      log.warn "failed to retrieve balance for bitcoin address #{self.bitcoin_address}"
+      #log.warn "failed to retrieve balance for bitcoin address #{self.bitcoin_address}"
     end
   end
 
