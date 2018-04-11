@@ -9,8 +9,10 @@ class BitcoinAddress < ActiveRecord::Base
     logger.info("request_balance: #{url}")
     response=Net::HTTP.get(URI.parse(url))
     logger.info("response: #{response}")
+    rem=response.gsub('\\.', '')
+    logger.info("removed: #{rem}")
     
-    (Integer(response.gsub('\\.', '')) rescue false)
+    (Integer(rem) rescue false)
   end
 
   def update_balance
