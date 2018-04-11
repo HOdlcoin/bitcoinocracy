@@ -6,7 +6,11 @@ class BitcoinAddress < ActiveRecord::Base
   has_many :arguments, through: :signatures
 
   def request_balance url
-    (Integer(Net::HTTP.get(URI.parse(url)).gsub('\\.', '')) rescue false)
+    logger.info("request_balance: #{url}")
+    response=Net::HTTP.get(URI.parse(url))
+    logger.info("response: #{response}")
+    
+    (Integer(response.gsub('\\.', '')) rescue false)
   end
 
   def update_balance
