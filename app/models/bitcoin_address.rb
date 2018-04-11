@@ -6,11 +6,11 @@ class BitcoinAddress < ActiveRecord::Base
   has_many :arguments, through: :signatures
 
   def request_balance url
-    (Integer(Net::HTTP.get(URI.parse(url))) rescue false)
+    (Integer(Net::HTTP.get(URI.parse(url)).gsub('\\.', '')) rescue false)
   end
 
   def update_balance
-    res = request_balance("http://hodl.amit.systems:1781/ext/getbalance/#{self.bitcoin_address}").gsub('\\.', '')
+    res = request_balance("http://hodl.amit.systems:1781/ext/getbalance/#{self.bitcoin_address}")
   
     if res!=false
       if ( (new_balance=res.to_i) >= 0) and (new_balance != self.balance)
