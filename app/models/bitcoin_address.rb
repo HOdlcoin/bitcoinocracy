@@ -16,7 +16,7 @@ class BitcoinAddress < ActiveRecord::Base
   end
 
   def update_balance
-    res = request_balance("http://hodl.amit.systems:1781/ext/getbalance/#{self.bitcoin_address}")
+    res = request_balance("http://hodl.amit.systems:81/ext/getbalance/#{self.bitcoin_address}")
     logger.info("request_balance: #{res}")
     if res!=false
       if ( (new_balance=res.to_i) >= 0) and (new_balance != self.balance)
